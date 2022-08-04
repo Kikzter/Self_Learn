@@ -70,11 +70,7 @@ class ScrapData:
         text = text.lower().replace("/" , " ").replace("|" ," ")
         return self.loop_through(text)
 
-    # re_ = re.compile("[0-9.]+[g gram gr g grams gms kg kilogram kgs kilograms ml milliliter milliliters l ltr liter
-    # liters oz ounce ounces -oz -ounce -ounces pound]+") re_ = re.compile("[0-9.]+[g ml kg pound]") matched_data =
-    # re.findall(re_, text) for data in matched_data: r1 = re.compile(r'[a-z]') match_data = re.findall(r1,
-    # data) txt = "".join(match_data) print("$$$$" ,matched_data) if (len(txt) > 0 and txt in valid_literals):
-    # unit_data.append(data.strip()) # print("### unit Data ####" , unit_data)
+    
 
     def call_to_pack(self, text):
         x_text = text
@@ -144,7 +140,6 @@ class ScrapData:
     #   for string in matched_str:
 
     def read_parse_write_csv_data(self):
-        # csv_file_desktop_path = os.path.join(os.path.join(os.environ['USERPROFILE'], 'Desktop'), 'sample.csv')
         csv_file_desktop_path = os.path.join(os.path.join(os.environ['USERPROFILE'], 'Desktop'), 'sample.csv')
 
         data_file = {}
@@ -159,7 +154,6 @@ class ScrapData:
 
         for data in data_file:
 
-            # print(data_file[data])
                 print("-------------------")
                 op = self.call_to_units(data_file[data][1])
                 pack = self.call_to_pack(data_file[data][1])
@@ -183,9 +177,7 @@ class ScrapData:
                 if len(op) > 0:
                     data_file[data][4] = self.format_unit_pack(UOM, Pack)
 
-                # print(data_file[data])
-            # print(data_file[data])
-
+                
 
         # columns = ('items', 'UOM', 'pack', 'size_name')
         col_data = []
